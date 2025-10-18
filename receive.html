@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Vietnamese Women's day 20/10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .message-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .controls {
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-box {
+            display: flex;
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px 0 0 10px;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            border-color: #ff6b6b;
+        }
+
+        .messages-container {
+            padding: 30px;
+            min-height: 500px;
+        }
+
+        .messages-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .message-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 5px solid #ff6b6b;
+            position: relative;
+            animation: fadeIn 0.5s ease;
+            cursor: pointer;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .sender-info {
+            font-weight: 600;
+            color: #ff6b6b;
+        }
+
+        .recipient-info {
+            margin: 10px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .message-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .message-time {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: right;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+            grid-column: 1 / -1;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            background-color: #f8f9fa;
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-container {
+            background: white;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-container {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .popup-sender {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .popup-recipient {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .popup-content {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .popup-message {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #444;
+            min-height: 150px;
+        }
+
+        .popup-message.typing {
+            border-right: 2px solid #ff6b6b;
+            white-space: pre-wrap;
+            overflow: hidden;
+        }
+
+        .popup-footer {
+            padding: 20px 30px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+        }
+
+        .popup-time {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .typing-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .typing-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .typing-btn:hover {
+            background: #ff5252;
+        }
+
+        .typing-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+            
+            .messages-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .popup-container {
+                width: 95%;
+            }
+            
+            .popup-message {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .messages-container {
+                padding: 15px;
+            }
+            
+            .popup-header, .popup-content, .popup-footer {
+                padding: 20px;
+            }
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+            }
+
+        body.dark-mode .container {
+            background-color: rgba(44, 62, 80, 0.95);
+            }
+
+        body.dark-mode .message-card {
+            background: #34495e;
+            color: #ecf0f1;
+            }
+
+            /* ===== MEDIA QUERIES CHO TẤT CẢ THIẾT BỊ ===== */
+
+        /* Desktop Lớn (1200px+) */
+        @media screen and (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+            
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .messages-list {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 30px;
+            }
+            
+            .message-card {
+                padding: 30px;
+            }
+            
+            .popup-container {
+                max-width: 800px;
+            }
+        }
+
+        /* Desktop Tiêu chuẩn (992px - 1199px) */
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .messages-list {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Máy tính bảng Ngang (768px - 991px) */
+        @media screen and (max-width: 991px) and (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .message-icon {
+                font-size: 2rem;
+            }
+            
+            .controls {
+                padding: 15px;
+            }
+            
+            .search-box {
+                max-width: 350px;
+            }
+            
+            .messages-list {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .message-card {
+                padding: 20px;
+            }
+            
+            .popup-header {
+                padding: 20px 25px;
+            }
+            
+            .popup-content {
+                padding: 25px;
+            }
+            
+            .popup-footer {
+                padding: 15px 25px;
+            }
+        }
+
+        /* Máy tính bảng Dọc (576px - 767px) */
+        @media screen and (max-width: 767px) and (min-width: 576px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                max-width: 540px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .message-icon {
+                top: 15px;
+                right: 15px;
+                font-size: 1.8rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+            
+            .filter-options {
+                justify-content: center;
+            }
+            
+            .messages-container {
+                padding: 20px;
+            }
+            
+            .messages-list {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .message-card {
+                padding: 20px;
+            }
+            
+            .message-header {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .message-content {
+                font-size: 1rem;
+            }
+            
+            .popup-container {
+                width: 95%;
+            }
+            
+            .popup-header {
+                padding: 20px;
+            }
+            
+            .popup-sender {
+                font-size: 1.3rem;
+            }
+            
+            .popup-recipient {
+                font-size: 1rem;
+            }
+            
+            .popup-content {
+                padding: 20px;
+            }
+            
+            .popup-message {
+                font-size: 1.1rem;
+            }
+            
+            .popup-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .typing-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            footer {
+                padding: 20px;
+            }
+        }
+
+        /* Điện thoại Lớn (425px - 575px) */
+        @media screen and (max-width: 575px) and (min-width: 425px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 12px;
+            }
+            
+            header {
+                padding: 25px 12px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .message-icon {
+                display: none;
+            }
+            
+            .controls {
+                padding: 12px;
+            }
+            
+            .search-box input {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .filter-btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .messages-container {
+                padding: 15px;
+            }
+            
+            .message-card {
+                padding: 18px;
+            }
+            
+            .message-header {
+                font-size: 0.85rem;
+            }
+            
+            .message-content {
+                font-size: 0.95rem;
+                -webkit-line-clamp: 2;
+            }
+            
+            .heart-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .popup-header {
+                padding: 18px;
+            }
+            
+            .popup-close {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .popup-sender {
+                font-size: 1.2rem;
+            }
+            
+            .popup-content {
+                padding: 18px;
+            }
+            
+            .popup-message {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .typing-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Điện thoại Nhỏ (375px - 424px) */
+        @media screen and (max-width: 424px) and (min-width: 375px) {
+            body {
+                padding: 8px;
+            }
+            
+            .container {
+                border-radius: 10px;
+            }
+            
+            header {
+                padding: 20px 10px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .controls {
+                padding: 10px;
+            }
+            
+            .search-box input {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .filter-btn {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .messages-container {
+                padding: 12px;
+            }
+            
+            .messages-list {
+                gap: 15px;
+            }
+            
+            .message-card {
+                padding: 15px;
+            }
+            
+            .message-header {
+                font-size: 0.8rem;
+            }
+            
+            .message-content {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            
+            .message-time {
+                font-size: 0.8rem;
+            }
+            
+            .empty-state {
+                padding: 40px 15px;
+            }
+            
+            .empty-state i {
+                font-size: 3rem;
+            }
+            
+            .empty-state h3 {
+                font-size: 1.3rem;
+            }
+            
+            .empty-state p {
+                font-size: 1rem;
+            }
+            
+            .popup-container {
+                width: 98%;
+            }
+            
+            .popup-header {
+                padding: 15px;
+            }
+            
+            .popup-sender {
+                font-size: 1.1rem;
+            }
+            
+            .popup-recipient {
+                font-size: 0.9rem;
+            }
+            
+            .popup-content {
+                padding: 15px;
+                max-height: 50vh;
+            }
+            
+            .popup-footer {
+                padding: 12px 15px;
+            }
+            
+            .typing-controls {
+                gap: 5px;
+            }
+            
+            .typing-btn {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+            
+            footer {
+                padding: 15px;
+            }
+        }
+
+        /* Điện thoại Rất Nhỏ (dưới 374px) */
+        @media screen and (max-width: 374px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                border-radius: 8px;
+            }
+            
+            header {
+                padding: 15px 8px;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .controls {
+                padding: 8px;
+            }
+            
+            .search-box input {
+                padding: 6px 8px;
+                font-size: 0.85rem;
+            }
+            
+            .search-btn {
+                padding: 0 15px;
+            }
+            
+            .filter-options {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 5px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .messages-container {
+                padding: 10px;
+            }
+            
+            .messages-list {
+                gap: 12px;
+            }
+            
+            .message-card {
+                padding: 12px;
+            }
+            
+            .message-header {
+                font-size: 0.75rem;
+                flex-direction: column;
+                gap: 3px;
+                text-align: center;
+            }
+            
+            .message-content {
+                font-size: 0.85rem;
+                -webkit-line-clamp: 2;
+            }
+            
+            .heart-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+                top: -10px;
+                right: -8px;
+            }
+            
+            .popup-header {
+                padding: 12px;
+            }
+            
+            .popup-close {
+                width: 30px;
+                height: 30px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .popup-sender {
+                font-size: 1rem;
+            }
+            
+            .popup-recipient {
+                font-size: 0.85rem;
+            }
+            
+            .popup-content {
+                padding: 12px;
+            }
+            
+            .popup-message {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                min-height: 120px;
+            }
+            
+            .popup-footer {
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .popup-time {
+                font-size: 0.8rem;
+            }
+            
+            .typing-controls {
+                width: 100%;
+            }
+            
+            .typing-btn {
+                flex: 1;
+                padding: 4px 8px;
+                font-size: 0.75rem;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            footer {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Điều chỉnh cho màn hình rất cao */
+        @media screen and (min-height: 1000px) {
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .container {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+
+        /* Điều chỉnh cho màn hình landscape trên mobile */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                max-height: 95vh;
+                overflow-y: auto;
+            }
+            
+            header {
+                padding: 15px 10px;
+            }
+            
+            .messages-container {
+                padding: 10px;
+            }
+            
+            .popup-content {
+                max-height: 40vh;
+            }
+        }
+
+        /* Hỗ trợ cho thiết bị cảm ứng */
+        @media (hover: none) and (pointer: coarse) {
+            .message-card:hover {
+                transform: none;
+            }
+            
+            .message-card:active {
+                transform: scale(0.98);
+            }
+            
+            .btn:hover, .typing-btn:hover, .filter-btn:hover {
+                transform: none;
+            }
+            
+            .btn:active, .typing-btn:active, .filter-btn:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* In ấn */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            
+            .controls, .popup-overlay, .btn {
+                display: none;
+            }
+            
+            .message-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="message-icon">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h1>Nhận Lời Nhắn</h1>
+            <p class="subtitle">Những lời nhắn nhủ, tâm sự của người ấy đang chờ bạn</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Tìm kiếm lời nhắn...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="recent">Gần đây</button>
+                <button class="filter-btn" data-filter="popular">Đặc biệt</button>
+            </div>
+        </div>
+
+        <div class="messages-container">
+            <div class="messages-list" id="messages-list">
+                <!-- Các lời nhắn sẽ được hiển thị ở đây -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Nhật Hào &copy; 2025</p>
+            <a href="message.html" class="btn"><i class="fas fa-arrow-left"></i> Quay lại trang gửi lời nhắn</a>
+        </footer>
+    </div>
+
+    <!-- Popup hiển thị lời nhắn chi tiết -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-container">
+            <div class="popup-header">
+                <div class="popup-close" id="popup-close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="popup-sender" id="popup-sender">Người gửi</div>
+                <div class="popup-recipient" id="popup-recipient">Gửi đến: Người nhận</div>
+            </div>
+            <div class="popup-content">
+                <div class="popup-message" id="popup-message"></div>
+            </div>
+            <div class="popup-footer">
+                <div class="popup-time" id="popup-time">Thời gian</div>
+                <div class="typing-controls">
+                    <button class="typing-btn" id="pause-btn" disabled><i class="fas fa-pause"></i> Tạm dừng</button>
+                    <button class="typing-btn" id="resume-btn" disabled><i class="fas fa-play"></i> Tiếp tục</button>
+                    <button class="typing-btn" id="skip-btn"><i class="fas fa-forward"></i> Bỏ qua</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messagesList = document.getElementById('messages-list');
+            const searchInput = document.getElementById('search-input');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            // Popup elements
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupClose = document.getElementById('popup-close');
+            const popupSender = document.getElementById('popup-sender');
+            const popupRecipient = document.getElementById('popup-recipient');
+            const popupMessage = document.getElementById('popup-message');
+            const popupTime = document.getElementById('popup-time');
+            const pauseBtn = document.getElementById('pause-btn');
+            const resumeBtn = document.getElementById('resume-btn');
+            const skipBtn = document.getElementById('skip-btn');
+            
+            // Biến cho hiệu ứng typing
+            let typingInterval;
+            let currentMessage = '';
+            let currentIndex = 0;
+            let isPaused = false;
+            let isTyping = false;
+            
+            // Dữ liệu mẫu để demo (trong thực tế sẽ lấy từ localStorage hoặc server)
+            const sampleMessages = [
+                {
+                    sender: "Mẹ",
+                    recipient: "Con gái yêu",
+                    message: "Con là niềm hạnh phúc lớn nhất của mẹ. Dù con đi đâu, làm gì, hãy luôn nhớ rằng mẹ luôn yêu thương và ủng hộ con. Mẹ mong con luôn mạnh mẽ, tự tin và hạnh phúc trên mọi nẻo đường con chọn.",
+                    timestamp: "10:30, 20/11/2023"
+                },
+                {
+                    sender: "Người bạn thân",
+                    recipient: "Bạn của tôi",
+                    message: "Cảm ơn vì đã luôn ở bên cạnh tôi trong những lúc khó khăn. Tôi trân trọng tình bạn của chúng ta nhiều lắm! Dù có chuyện gì xảy ra, tôi luôn tin rằng chúng ta sẽ vượt qua tất cả cùng nhau.",
+                    timestamp: "15:45, 19/11/2023"
+                },
+                {
+                    sender: "Anh trai",
+                    recipient: "Em gái",
+                    message: "Chúc em luôn mạnh mẽ và hạnh phúc. Nhớ rằng anh luôn ở đây nếu em cần bất cứ điều gì. Đừng bao giờ quên rằng em xứng đáng với những điều tốt đẹp nhất trong cuộc sống này.",
+                    timestamp: "08:15, 18/11/2023"
+                },
+                {
+                    sender: "Người yêu cũ",
+                    recipient: "Bạn",
+                    message: "Dù chúng ta không còn bên nhau, tôi vẫn mong bạn tìm thấy hạnh phúc thực sự. Chúc bạn mọi điều tốt đẹp nhất. Hy vọng một ngày nào đó, chúng ta có thể nhìn lại và mỉm cười vì những kỷ niệm đẹp đã có.",
+                    timestamp: "21:20, 17/11/2023"
+                },
+                {
+                    sender: "Đồng nghiệp",
+                    recipient: "Bạn làm chung",
+                    message: "Cảm ơn vì đã luôn hỗ trợ tôi trong công việc. Tôi thực sự đánh giá cao sự chăm chỉ và tận tâm của bạn. Làm việc cùng bạn là một niềm vui và tôi học được rất nhiều điều từ bạn.",
+                    timestamp: "14:10, 16/11/2023"
+                },
+                {
+                    sender: "Bố",
+                    recipient: "Con trai",
+                    message: "Bố tự hào về con. Hãy tiếp tục phấn đấu và theo đuổi ước mơ của mình, con nhé! Đừng bao giờ từ bỏ và hãy nhớ rằng gia đình luôn là nơi bình yên nhất để con trở về.",
+                    timestamp: "19:05, 15/11/2023"
+                }
+            ];
+            
+            // Tải tin nhắn từ localStorage hoặc sử dụng dữ liệu mẫu
+            function loadMessages() {
+                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || sampleMessages;
+                displayMessages(messages);
+            }
+            
+            // Hiển thị tin nhắn
+            function displayMessages(messages) {
+                messagesList.innerHTML = '';
+                
+                if (messages.length === 0) {
+                    messagesList.innerHTML = `
+                        <div class="empty-state">
+                            <i class="far fa-folder-open"></i>
+                            <h3>Chưa có lời nhắn nào</h3>
+                            <p>Hãy kiểm tra lại sau hoặc quay lại trang chủ để gửi lời nhắn đầu tiên!</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                messages.forEach((message, index) => {
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'message-card';
+                    messageElement.setAttribute('data-index', index);
+                    messageElement.innerHTML = `
+                        <div class="heart-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="message-header">
+                            <span class="sender-info"><i class="fas fa-user"></i> ${message.sender}</span>
+                        </div>
+                        ${message.recipient ? `<div class="recipient-info"><i class="fas fa-share"></i> Gửi đến: ${message.recipient}</div>` : ''}
+                        <div class="message-content">
+                            "${message.message}"
+                        </div>
+                        <div class="message-time">
+                            <i class="far fa-clock"></i> ${message.timestamp}
+                        </div>
+                    `;
+                    
+                    // Thêm sự kiện click để mở popup
+                    messageElement.addEventListener('click', function() {
+                        openMessagePopup(message);
+                    });
+                    
+                    messagesList.appendChild(messageElement);
+                });
+            }
+            
+            // Mở popup hiển thị lời nhắn
+            function openMessagePopup(message) {
+                // Đặt thông tin cơ bản
+                popupSender.textContent = message.sender;
+                popupRecipient.textContent = `Gửi đến: ${message.recipient}`;
+                popupTime.textContent = message.timestamp;
+                
+                // Reset trạng thái typing
+                currentMessage = message.message;
+                currentIndex = 0;
+                isPaused = false;
+                isTyping = true;
+                
+                // Hiển thị popup
+                popupOverlay.classList.add('active');
+                
+                // Bắt đầu hiệu ứng typing
+                startTypingEffect();
+                
+                // Đặt trạng thái nút điều khiển
+                pauseBtn.disabled = false;
+                resumeBtn.disabled = true;
+                skipBtn.disabled = false;
+            }
+            
+            // Bắt đầu hiệu ứng typing
+            function startTypingEffect() {
+                popupMessage.textContent = '';
+                popupMessage.classList.add('typing');
+                
+                clearInterval(typingInterval);
+                
+                typingInterval = setInterval(function() {
+                    if (currentIndex < currentMessage.length && !isPaused) {
+                        popupMessage.textContent += currentMessage.charAt(currentIndex);
+                        currentIndex++;
+                        
+                        // Cuộn xuống dưới cùng
+                        const popupContent = document.querySelector('.popup-content');
+                        popupContent.scrollTop = popupContent.scrollHeight;
+                    } else if (currentIndex >= currentMessage.length) {
+                        clearInterval(typingInterval);
+                        popupMessage.classList.remove('typing');
+                        isTyping = false;
+                        
+                        // Vô hiệu hóa nút điều khiển khi hoàn thành
+                        pauseBtn.disabled = true;
+                        resumeBtn.disabled = true;
+                    }
+                }, 30); // Tốc độ typing (ms)
+            }
+            
+            // Tìm kiếm tin nhắn
+            function searchMessages() {
+                const searchTerm = searchInput.value.toLowerCase();
+                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || sampleMessages;
+                
+                if (searchTerm) {
+                    messages = messages.filter(message => 
+                        message.sender.toLowerCase().includes(searchTerm) ||
+                        message.recipient.toLowerCase().includes(searchTerm) ||
+                        message.message.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                displayMessages(messages);
+            }
+            
+            // Lọc tin nhắn
+            function filterMessages(filter) {
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+                
+                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || sampleMessages;
+                
+                switch(filter) {
+                    case 'recent':
+                        // Giả lập lọc tin nhắn gần đây
+                        messages = messages.slice(0, 3);
+                        break;
+                    case 'popular':
+                        // Giả lập lọc tin nhắn đặc biệt
+                        messages = messages.filter(msg => msg.message.length > 100);
+                        break;
+                    default:
+                        // Hiển thị tất cả
+                        break;
+                }
+                
+                displayMessages(messages);
+            }
+            
+            // Đóng popup
+            function closePopup() {
+                popupOverlay.classList.remove('active');
+                clearInterval(typingInterval);
+                isTyping = false;
+            }
+            
+            // Gán sự kiện
+            searchBtn.addEventListener('click', searchMessages);
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    searchMessages();
+                }
+            });
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterMessages(this.getAttribute('data-filter'));
+                });
+            });
+            
+            // Sự kiện cho popup
+            popupClose.addEventListener('click', closePopup);
+            popupOverlay.addEventListener('click', function(event) {
+                if (event.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+            
+            // Sự kiện cho nút điều khiển typing
+            pauseBtn.addEventListener('click', function() {
+                if (isTyping && !isPaused) {
+                    isPaused = true;
+                    pauseBtn.disabled = true;
+                    resumeBtn.disabled = false;
+                }
+            });
+            
+            resumeBtn.addEventListener('click', function() {
+                if (isTyping && isPaused) {
+                    isPaused = false;
+                    pauseBtn.disabled = false;
+                    resumeBtn.disabled = true;
+                }
+            });
+            
+            skipBtn.addEventListener('click', function() {
+                if (isTyping) {
+                    clearInterval(typingInterval);
+                    popupMessage.textContent = currentMessage;
+                    popupMessage.classList.remove('typing');
+                    isTyping = false;
+                    
+                    // Vô hiệu hóa nút điều khiển
+                    pauseBtn.disabled = true;
+                    resumeBtn.disabled = true;
+                    skipBtn.disabled = true;
+                }
+            });
+
+            // Dark mode toggle
+            const darkModeToggle = document.createElement('button');
+            darkModeToggle.textContent = '🌙';
+            darkModeToggle.className = 'dark-mode-toggle';
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            }
+            
+            // Tải tin nhắn khi trang được tải
+            loadMessages();
+        });
+    </script>
+</body>
+</html>
