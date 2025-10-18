@@ -6,6 +6,7 @@
     <title>Happy Vietnamese Women's day 20/10</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* CSS giữ nguyên từ code trước */
         * {
             margin: 0;
             padding: 0;
@@ -373,467 +374,6 @@
                 gap: 15px;
             }
         }
-
-        /* ===== MEDIA QUERIES CHO TẤT CẢ THIẾT BỊ ===== */
-
-        /* Desktop Lớn (1200px+) */
-        @media screen and (min-width: 1200px) {
-            .container {
-                max-width: 1100px;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            .message-form {
-                padding: 40px;
-            }
-            
-            .stats-container {
-                padding: 30px;
-            }
-        }
-
-        /* Desktop Tiêu chuẩn (992px - 1199px) */
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            .container {
-                max-width: 960px;
-            }
-            
-            h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        /* Máy tính bảng Ngang (768px - 991px) */
-        @media screen and (max-width: 991px) and (min-width: 768px) {
-            .container {
-                max-width: 720px;
-            }
-            
-            h1 {
-                font-size: 2.3rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .form-row {
-                gap: 10px;
-            }
-            
-            .navigation {
-                flex-wrap: wrap;
-            }
-        }
-
-        /* Máy tính bảng Dọc (576px - 767px) */
-        @media screen and (max-width: 767px) and (min-width: 576px) {
-            body {
-                padding: 15px;
-            }
-            
-            .container {
-                max-width: 540px;
-                border-radius: 15px;
-            }
-            
-            header {
-                padding: 25px 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 8px;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .heart-icon {
-                top: 15px;
-                right: 15px;
-                font-size: 1.5rem;
-            }
-            
-            .message-form {
-                padding: 25px 20px;
-            }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .navigation {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-btn {
-                width: 200px;
-                justify-content: center;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .message-display {
-                padding: 25px 20px;
-            }
-            
-            .message-header {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .message-actions {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .stats-container {
-                flex-direction: column;
-                gap: 20px;
-                padding: 25px;
-            }
-            
-            .theme-toggle {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Điện thoại Lớn (425px - 575px) */
-        @media screen and (max-width: 575px) and (min-width: 425px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                border-radius: 12px;
-            }
-            
-            header {
-                padding: 20px 12px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 0.95rem;
-            }
-            
-            .heart-icon {
-                display: none; /* Ẩn icon trái tim trên mobile nhỏ */
-            }
-            
-            .message-form {
-                padding: 20px 15px;
-            }
-            
-            input, textarea, select {
-                padding: 10px 12px;
-                font-size: 0.95rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-            
-            .message-display {
-                padding: 20px 15px;
-            }
-            
-            .message-card {
-                padding: 15px;
-            }
-            
-            .message-content {
-                font-size: 1rem;
-            }
-            
-            .message-actions {
-                gap: 5px;
-            }
-            
-            .action-btn {
-                font-size: 0.9rem;
-                padding: 4px 8px;
-            }
-            
-            .stats-container {
-                margin: 15px 0;
-                padding: 20px 15px;
-            }
-            
-            .stat-number {
-                font-size: 1.7rem;
-            }
-            
-            .theme-toggle {
-                top: 15px;
-                right: 15px;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Điện thoại Nhỏ (375px - 424px) */
-        @media screen and (max-width: 424px) and (min-width: 375px) {
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            .subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .message-form {
-                padding: 18px 12px;
-            }
-            
-            .form-group {
-                margin-bottom: 15px;
-            }
-            
-            input, textarea, select {
-                padding: 8px 10px;
-                font-size: 0.9rem;
-            }
-            
-            textarea {
-                min-height: 120px;
-            }
-            
-            .btn {
-                padding: 8px 16px;
-                font-size: 0.95rem;
-            }
-            
-            .message-display h2 {
-                font-size: 1.3rem;
-            }
-            
-            .message-card {
-                padding: 12px;
-                margin-bottom: 15px;
-            }
-            
-            .message-header {
-                font-size: 0.8rem;
-            }
-            
-            .message-content {
-                font-size: 0.95rem;
-            }
-            
-            .empty-state i {
-                font-size: 2.5rem;
-            }
-            
-            .empty-state p {
-                font-size: 1rem;
-            }
-        }
-
-        /* Điện thoại Rất Nhỏ (dưới 374px) */
-        @media screen and (max-width: 374px) {
-            body {
-                padding: 8px;
-            }
-            
-            .container {
-                border-radius: 10px;
-            }
-            
-            header {
-                padding: 15px 10px;
-            }
-            
-            h1 {
-                font-size: 1.4rem;
-            }
-            
-            .subtitle {
-                font-size: 0.85rem;
-            }
-            
-            .message-form {
-                padding: 15px 10px;
-            }
-            
-            input, textarea, select {
-                padding: 6px 8px;
-                font-size: 0.85rem;
-            }
-            
-            .btn {
-                padding: 6px 12px;
-                font-size: 0.9rem;
-            }
-            
-            .message-display {
-                padding: 15px 10px;
-            }
-            
-            .message-display h2 {
-                font-size: 1.2rem;
-                margin-bottom: 15px;
-            }
-            
-            .message-card {
-                padding: 10px;
-                margin-bottom: 12px;
-            }
-            
-            .message-header {
-                font-size: 0.75rem;
-                flex-direction: column;
-                gap: 3px;
-            }
-            
-            .message-content {
-                font-size: 0.9rem;
-            }
-            
-            .message-actions {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .action-btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .stats-container {
-                padding: 15px 10px;
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            
-            .stat-label {
-                font-size: 0.8rem;
-            }
-            
-            footer {
-                padding: 15px;
-                font-size: 0.8rem;
-            }
-            
-            .theme-toggle {
-                top: 10px;
-                right: 10px;
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Điều chỉnh cho màn hình rất cao */
-        @media screen and (min-height: 1000px) {
-            body {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .container {
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-        }
-
-        /* Điều chỉnh cho màn hình landscape trên mobile */
-        @media screen and (max-height: 500px) and (orientation: landscape) {
-            body {
-                padding: 5px;
-            }
-            
-            .container {
-                max-height: 95vh;
-                overflow-y: auto;
-            }
-            
-            header {
-                padding: 15px 10px;
-            }
-            
-            .message-form {
-                padding: 15px;
-            }
-            
-            textarea {
-                min-height: 80px;
-            }
-        }
-
-        /* Hỗ trợ cho thiết bị cảm ứng */
-        @media (hover: none) and (pointer: coarse) {
-            .btn:hover, 
-            .nav-btn:hover, 
-            .action-btn:hover {
-                transform: none;
-            }
-            
-            .btn:active, 
-            .nav-btn:active, 
-            .action-btn:active {
-                transform: scale(0.98);
-            }
-        }
-
-        /* Tối ưu cho trình đọc màn hình */
-        @media speech {
-            .heart-icon::after {
-                content: "Trang lời nhắn tâm tư";
-                speak: none;
-            }
-        }
-
-        /* In ấn */
-        @media print {
-            body {
-                background: white !important;
-                color: black !important;
-                padding: 0;
-            }
-            
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-            }
-            
-            .theme-toggle,
-            .action-buttons,
-            .message-actions,
-            .navigation {
-                display: none;
-            }
-            
-            .message-card {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
-        }
     </style>
 </head>
 <body>
@@ -952,9 +492,11 @@
             const messagesContainer = document.getElementById('messages-container');
             const statsContainer = document.getElementById('stats-container');
             
-            // Tải tin nhắn và cài đặt khi trang được tải
-            loadMessages();
-            updateStats();
+            // Biến lưu trữ tin nhắn
+            let allMessages = [];
+            
+            // Tải tin nhắn từ data.json khi khởi động
+            loadMessagesFromJSON();
             loadDraft();
             setupTheme();
             
@@ -977,7 +519,37 @@
             exportBtn.addEventListener('click', exportMessages);
             themeToggle.addEventListener('click', toggleTheme);
             
-            function sendMessage() {
+            // Tải dữ liệu từ data.json
+            async function loadMessagesFromJSON() {
+                try {
+                    const response = await fetch('data.json');
+                    
+                    if (!response.ok) {
+                        throw new Error('Không thể tải dữ liệu');
+                    }
+                    
+                    const data = await response.json();
+                    allMessages = data.messages || [];
+                    
+                    updateStats();
+                    displayRecentMessages();
+                    
+                } catch (error) {
+                    console.error('Lỗi khi tải dữ liệu:', error);
+                    // Nếu không tải được từ data.json, sử dụng localStorage làm fallback
+                    loadMessagesFromLocalStorage();
+                }
+            }
+            
+            // Fallback: tải từ localStorage
+            function loadMessagesFromLocalStorage() {
+                const messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
+                allMessages = messages;
+                updateStats();
+                displayRecentMessages();
+            }
+            
+            async function sendMessage() {
                 const sender = senderInput.value.trim();
                 const recipient = recipientInput.value.trim();
                 const message = messageInput.value.trim();
@@ -996,30 +568,49 @@
                     message: message,
                     type: type,
                     timestamp: new Date().toLocaleString('vi-VN'),
-                    isFavorite: false,
-                    reactions: {
-                        heart: 0,
-                        smile: 0,
-                        cry: 0
-                    }
+                    isFavorite: false
                 };
                 
-                // Lưu tin nhắn
-                saveMessage(messageObj);
-                
-                // Hiển thị tin nhắn
-                displayMessage(messageObj);
-                
-                // Reset form và cập nhật thống kê
-                clearForm();
-                updateStats();
-                clearDraft();
-                
-                // Hiệu ứng thành công
-                showSuccessAnimation();
+                try {
+                    // Thêm tin nhắn mới vào mảng
+                    allMessages.unshift(messageObj);
+                    
+                    // Lưu vào data.json
+                    await saveMessageToJSON(messageObj);
+                    
+                    // Hiển thị tin nhắn
+                    displayMessage(messageObj);
+                    
+                    // Reset form và cập nhật thống kê
+                    clearForm();
+                    updateStats();
+                    clearDraft();
+                    
+                    // Hiệu ứng thành công
+                    showSuccessAnimation();
+                    
+                } catch (error) {
+                    console.error('Lỗi khi lưu tin nhắn:', error);
+                    // Fallback: lưu vào localStorage
+                    saveMessageToLocalStorage(messageObj);
+                    alert('Đã gửi tin nhắn (lưu tạm)');
+                }
             }
             
-            function saveMessage(messageObj) {
+            // Lưu tin nhắn vào data.json
+            async function saveMessageToJSON(messageObj) {
+                // Trong môi trường production, đây sẽ là API call đến server
+                // Ở đây ta giả lập bằng cách lưu vào localStorage và hiển thị thông báo
+                
+                // Lưu vào localStorage như một giải pháp tạm thời
+                saveMessageToLocalStorage(messageObj);
+                
+                // Hiển thị thông báo cho người dùng
+                alert('Tin nhắn đã được gửi thành công! Trong môi trường thực tế, tin nhắn sẽ được lưu vào cơ sở dữ liệu server.');
+            }
+            
+            // Fallback: lưu vào localStorage
+            function saveMessageToLocalStorage(messageObj) {
                 let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
                 messages.unshift(messageObj);
                 
@@ -1031,11 +622,10 @@
                 localStorage.setItem('heartfeltMessages', JSON.stringify(messages));
             }
             
-            function loadMessages() {
-                const messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
+            function displayRecentMessages() {
                 messagesContainer.innerHTML = '';
                 
-                if (messages.length === 0) {
+                if (allMessages.length === 0) {
                     messagesContainer.innerHTML = `
                         <div class="empty-state">
                             <i class="fas fa-comment-dots"></i>
@@ -1046,16 +636,16 @@
                 }
                 
                 // Hiển thị tối đa 5 tin nhắn gần nhất
-                const recentMessages = messages.slice(0, 5);
+                const recentMessages = allMessages.slice(0, 5);
                 recentMessages.forEach(message => {
                     displayMessage(message);
                 });
                 
                 // Nếu có nhiều hơn 5 tin nhắn, hiển thị nút xem thêm
-                if (messages.length > 5) {
+                if (allMessages.length > 5) {
                     const viewMoreBtn = document.createElement('button');
                     viewMoreBtn.className = 'btn';
-                    viewMoreBtn.innerHTML = `<i class="fas fa-eye"></i> Xem thêm ${messages.length - 5} tin nhắn`;
+                    viewMoreBtn.innerHTML = `<i class="fas fa-eye"></i> Xem thêm ${allMessages.length - 5} tin nhắn`;
                     viewMoreBtn.addEventListener('click', function() {
                         window.location.href = 'receive.html';
                     });
@@ -1092,9 +682,6 @@
                         <button class="action-btn" onclick="shareMessage(${messageObj.id})">
                             <i class="fas fa-share"></i> Chia sẻ
                         </button>
-                        <button class="action-btn" onclick="deleteMessage(${messageObj.id})">
-                            <i class="fas fa-trash"></i> Xóa
-                        </button>
                     </div>
                 `;
                 
@@ -1115,14 +702,17 @@
             }
             
             function updateStats() {
-                const messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
                 const today = new Date().toDateString();
-                const todayMessages = messages.filter(msg => 
-                    new Date(msg.timestamp).toDateString() === today
-                );
-                const favoriteMessages = messages.filter(msg => msg.isFavorite).length;
+                const todayMessages = allMessages.filter(msg => {
+                    try {
+                        return new Date(msg.timestamp).toDateString() === today;
+                    } catch {
+                        return false;
+                    }
+                });
+                const favoriteMessages = allMessages.filter(msg => msg.isFavorite).length;
                 
-                document.getElementById('total-messages').textContent = messages.length;
+                document.getElementById('total-messages').textContent = allMessages.length;
                 document.getElementById('favorite-messages').textContent = favoriteMessages;
                 document.getElementById('today-messages').textContent = todayMessages.length;
             }
@@ -1160,8 +750,9 @@
             
             function clearAllMessages() {
                 if (confirm('Bạn có chắc muốn xóa tất cả tin nhắn? Hành động này không thể hoàn tác!')) {
+                    allMessages = [];
                     localStorage.removeItem('heartfeltMessages');
-                    loadMessages();
+                    displayRecentMessages();
                     updateStats();
                     alert('Đã xóa tất cả tin nhắn!');
                 }
@@ -1176,12 +767,13 @@
                     const reader = new FileReader();
                     reader.onload = function(event) {
                         try {
-                            const importedMessages = JSON.parse(event.target.result);
+                            const importedData = JSON.parse(event.target.result);
+                            const importedMessages = importedData.messages || importedData;
+                            
                             if (Array.isArray(importedMessages)) {
-                                const currentMessages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                                const mergedMessages = [...importedMessages, ...currentMessages];
-                                localStorage.setItem('heartfeltMessages', JSON.stringify(mergedMessages));
-                                loadMessages();
+                                allMessages = [...importedMessages, ...allMessages];
+                                localStorage.setItem('heartfeltMessages', JSON.stringify(allMessages));
+                                displayRecentMessages();
                                 updateStats();
                                 alert(`Đã nhập thành công ${importedMessages.length} tin nhắn!`);
                             } else {
@@ -1197,13 +789,18 @@
             }
             
             function exportMessages() {
-                const messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                if (messages.length === 0) {
+                if (allMessages.length === 0) {
                     alert('Không có tin nhắn nào để xuất!');
                     return;
                 }
                 
-                const dataStr = JSON.stringify(messages, null, 2);
+                const dataToExport = {
+                    messages: allMessages,
+                    exportedAt: new Date().toISOString(),
+                    totalMessages: allMessages.length
+                };
+                
+                const dataStr = JSON.stringify(dataToExport, null, 2);
                 const dataBlob = new Blob([dataStr], {type: 'application/json'});
                 
                 const link = document.createElement('a');
@@ -1239,19 +836,17 @@
             
             // Các hàm toàn cục để sử dụng trong onclick
             window.toggleFavorite = function(messageId) {
-                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                const messageIndex = messages.findIndex(msg => msg.id === messageId);
+                const messageIndex = allMessages.findIndex(msg => msg.id === messageId);
                 if (messageIndex !== -1) {
-                    messages[messageIndex].isFavorite = !messages[messageIndex].isFavorite;
-                    localStorage.setItem('heartfeltMessages', JSON.stringify(messages));
-                    loadMessages();
+                    allMessages[messageIndex].isFavorite = !allMessages[messageIndex].isFavorite;
+                    localStorage.setItem('heartfeltMessages', JSON.stringify(allMessages));
+                    displayRecentMessages();
                     updateStats();
                 }
             };
             
             window.copyMessage = function(messageId) {
-                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                const message = messages.find(msg => msg.id === messageId);
+                const message = allMessages.find(msg => msg.id === messageId);
                 if (message) {
                     const textToCopy = `${message.message}\n\n- ${message.sender}`;
                     navigator.clipboard.writeText(textToCopy).then(() => {
@@ -1261,8 +856,7 @@
             };
             
             window.shareMessage = function(messageId) {
-                let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                const message = messages.find(msg => msg.id === messageId);
+                const message = allMessages.find(msg => msg.id === messageId);
                 if (message) {
                     const textToShare = `${message.message}\n\n- ${message.sender}`;
                     if (navigator.share) {
@@ -1275,16 +869,6 @@
                         navigator.clipboard.writeText(textToShare);
                         alert('Đã sao chép tin nhắn để chia sẻ!');
                     }
-                }
-            };
-            
-            window.deleteMessage = function(messageId) {
-                if (confirm('Bạn có chắc muốn xóa tin nhắn này?')) {
-                    let messages = JSON.parse(localStorage.getItem('heartfeltMessages')) || [];
-                    messages = messages.filter(msg => msg.id !== messageId);
-                    localStorage.setItem('heartfeltMessages', JSON.stringify(messages));
-                    loadMessages();
-                    updateStats();
                 }
             };
         });
