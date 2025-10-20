@@ -50,3 +50,8 @@ Liên hệ: *[vonhathaoqtm3k14@gmail.com hoặc Facebook: Nhật Hào]*
 ---
 
 > 🌺 "Dành tặng những người phụ nữ tuyệt vời — chúc bạn luôn hạnh phúc và rực rỡ như đóa hoa mùa xuân."
+>
+> "Xin lỗi vì sự bất tiện này"
+> "Trang mesage.html của mình đang bị lỗi không thể liên kết được với data.json nên khi bạn gửi tin đi là chỉ có mình bạn thấy được thôi"
+> "Muốn đổi thì vào data.json ở phần tử message nhập nội dung bạn muốn vào" "nhớ lưu về git của các bạn nhá ghi nguốn cho mình là được hehe"
+> 
